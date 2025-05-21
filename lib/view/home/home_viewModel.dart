@@ -22,8 +22,8 @@ class HomeviewModel extends BaseViewModel {
     _navigationService.navigateToDuaView();
   }
 
-  navigateToQuran() {
-    _navigationService.navigateToQuranView();
+  navigateToSurahView() {
+    _navigationService.navigateToSurahListView();
   }
 
   navigateToZakat() {

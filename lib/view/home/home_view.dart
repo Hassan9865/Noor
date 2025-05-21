@@ -104,7 +104,7 @@ class HomeView extends StatelessWidget {
                               case 3:
                                 viewModel.navigateToQiblaview();
                               case 4:
-                                viewModel.navigateToQuran();
+                                viewModel.navigateToSurahView();
                               case 5:
                                 viewModel.navigateToZakat();
                               case 6:
