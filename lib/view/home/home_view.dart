@@ -39,9 +39,7 @@ class HomeView extends StatelessWidget {
                               (context) => IconButton(
                                 icon: Icon(Icons.menu, size: Txtsize * 0.06),
                                 onPressed: () {
-                                  Scaffold.of(
-                                    context,
-                                  ).openDrawer(); // 👈 Opens the drawer
+                                  Scaffold.of(context).openDrawer();
                                 },
                               ),
                         ),
@@ -94,7 +92,27 @@ class HomeView extends StatelessWidget {
                         return MyCard(
                           text: cardItem[index].title,
                           imagePath: cardItem[index].image,
-                          onTap: () {},
+                          onTap: () {
+                            switch (index) {
+                              case 0:
+                                viewModel.navigateToPrayertime();
+                                break;
+                              case 1:
+                                viewModel.navigateToTasbhih();
+                              case 2:
+                                viewModel.navigateToDua();
+                              case 3:
+                                viewModel.navigateToQiblaview();
+                              case 4:
+                                viewModel.navigateToQuran();
+                              case 5:
+                                viewModel.navigateToZakat();
+                              case 6:
+                                viewModel.navigateToKalma();
+                                break;
+                              // Add more cases
+                            }
+                          },
                         );
                       },
                     ),
