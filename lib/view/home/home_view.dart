@@ -21,11 +21,12 @@ class HomeView extends StatelessWidget {
           body: SafeArea(
             child: Container(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.teal[50]!, Colors.blue[50]!],
-                ),
+                // gradient: LinearGradient(
+                //   begin: Alignment.topCenter,
+                //   end: Alignment.bottomCenter,
+                //   colors: [Colors.teal[50]!, Colors.blue[50]!],
+                // ),
+                color: Colors.teal[50],
               ),
               child: Column(
                 children: [
