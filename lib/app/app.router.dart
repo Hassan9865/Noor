@@ -5,9 +5,10 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i11;
+import 'package:flutter/material.dart' as _i12;
 import 'package:flutter/material.dart';
 import 'package:noor/view/dua/dua_view.dart' as _i6;
+import 'package:noor/view/hadees/hadees_view.dart' as _i11;
 import 'package:noor/view/home/home_view.dart' as _i2;
 import 'package:noor/view/kalma/kalma_view.dart' as _i10;
 import 'package:noor/view/prayer%20time/prayer_time_view.dart' as _i4;
@@ -17,7 +18,7 @@ import 'package:noor/view/quran/surah/surah_view.dart' as _i7;
 import 'package:noor/view/tasbih/tasbih_view.dart' as _i5;
 import 'package:noor/view/zakat/zakat_view.dart' as _i9;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i12;
+import 'package:stacked_services/stacked_services.dart' as _i13;
 
 class Routes {
   static const homeView = '/';
@@ -38,6 +39,8 @@ class Routes {
 
   static const kalmaView = '/kalma-view';
 
+  static const hadeesView = '/hadees-view';
+
   static const all = <String>{
     homeView,
     qiblaView,
@@ -48,6 +51,7 @@ class Routes {
     ayahView,
     zakatView,
     kalmaView,
+    hadeesView,
   };
 }
 
@@ -89,62 +93,72 @@ class StackedRouter extends _i1.RouterBase {
       Routes.kalmaView,
       page: _i10.KalmaView,
     ),
+    _i1.RouteDef(
+      Routes.hadeesView,
+      page: _i11.HadeesView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.QiblaView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.QiblaView(),
         settings: data,
       );
     },
     _i4.PrayerTimeView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.PrayerTimeView(),
         settings: data,
       );
     },
     _i5.TasbihView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.TasbihView(),
         settings: data,
       );
     },
     _i6.DuaView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.DuaView(),
         settings: data,
       );
     },
     _i7.SurahListView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SurahListView(),
         settings: data,
       );
     },
     _i8.AyahView: (data) {
       final args = data.getArgs<AyahViewArguments>(nullOk: false);
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i8.AyahView(key: args.key, surahId: args.surahId),
         settings: data,
       );
     },
     _i9.ZakatView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.ZakatView(),
         settings: data,
       );
     },
     _i10.KalmaView: (data) {
-      return _i11.MaterialPageRoute<dynamic>(
+      return _i12.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.KalmaView(),
+        settings: data,
+      );
+    },
+    _i11.HadeesView: (data) {
+      return _i12.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i11.HadeesView(),
         settings: data,
       );
     },
@@ -163,7 +177,7 @@ class AyahViewArguments {
     required this.surahId,
   });
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   final int surahId;
 
@@ -184,7 +198,7 @@ class AyahViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i12.NavigationService {
+extension NavigatorStateExtension on _i13.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -270,7 +284,7 @@ extension NavigatorStateExtension on _i12.NavigationService {
   }
 
   Future<dynamic> navigateToAyahView({
-    _i11.Key? key,
+    _i12.Key? key,
     required int surahId,
     int? routerId,
     bool preventDuplicates = true,
@@ -308,6 +322,20 @@ extension NavigatorStateExtension on _i12.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.kalmaView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToHadeesView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.hadeesView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -399,7 +427,7 @@ extension NavigatorStateExtension on _i12.NavigationService {
   }
 
   Future<dynamic> replaceWithAyahView({
-    _i11.Key? key,
+    _i12.Key? key,
     required int surahId,
     int? routerId,
     bool preventDuplicates = true,
@@ -437,6 +465,20 @@ extension NavigatorStateExtension on _i12.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.kalmaView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithHadeesView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.hadeesView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

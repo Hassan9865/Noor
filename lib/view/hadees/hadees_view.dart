@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:noor/view/dua/dua_viewModel.dart';
+import 'package:noor/view/hadees/hadees_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
-class DuaView extends StatelessWidget {
-  const DuaView({super.key});
+class HadeesView extends StatelessWidget {
+  const HadeesView({super.key});
 
   @override
   Widget build(BuildContext context) {
     final Txtsize = MediaQuery.of(context).size.width;
+
     return ViewModelBuilder.reactive(
-      viewModelBuilder: () => DuaViewmodel(),
-      builder: (context, DuaViewmodel viewModel, child) {
+      viewModelBuilder: () => HadeesViewmodel(),
+      builder: (context, HadeesViewmodel viewModel, child) {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
-            title: const Text("Dua", style: TextStyle(color: Colors.black)),
+            title: const Text(
+              "Hadees-e-Pak",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             centerTitle: true,
             elevation: 0,
             leading: IconButton(
@@ -62,7 +69,7 @@ class DuaView extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Text(
-                                    viewModel.currentDua.name,
+                                    viewModel.currentHadess.title,
                                     style: TextStyle(
                                       fontSize: Txtsize * 0.05,
                                       fontWeight: FontWeight.bold,
@@ -72,7 +79,7 @@ class DuaView extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 10),
                                   Text(
-                                    viewModel.currentDua.dua,
+                                    viewModel.currentHadess.arabic,
                                     style: TextStyle(
                                       fontSize: Txtsize * 0.07,
                                       color: Colors.black,
@@ -81,7 +88,7 @@ class DuaView extends StatelessWidget {
                                   ),
                                   const Divider(),
                                   Text(
-                                    viewModel.currentDua.meaning,
+                                    viewModel.currentHadess.meaning,
                                     style: TextStyle(
                                       fontSize: Txtsize * 0.04,
                                       color: Colors.black54,
@@ -106,7 +113,7 @@ class DuaView extends StatelessWidget {
                                   ),
                                 ),
                                 onPressed: () {
-                                  viewModel.backDua();
+                                  viewModel.backHadees();
                                 },
                               ),
                               const SizedBox(width: 20),
@@ -120,7 +127,7 @@ class DuaView extends StatelessWidget {
                                   ),
                                 ),
                                 onPressed: () {
-                                  viewModel.nextDua();
+                                  viewModel.nextHadees();
                                 },
                               ),
                             ],

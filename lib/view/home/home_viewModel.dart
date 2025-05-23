@@ -10,6 +10,10 @@ class HomeviewModel extends BaseViewModel {
     _navigationService.navigateToQiblaView();
   }
 
+  navigateToHadeesview() {
+    _navigationService.navigateToHadeesView();
+  }
+
   navigateToPrayertime() {
     _navigationService.navigateToPrayerTimeView();
   }

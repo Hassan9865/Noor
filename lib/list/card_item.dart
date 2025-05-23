@@ -7,6 +7,7 @@ class CardItem {
 
 final List<CardItem> cardItem = [
   CardItem(title: 'Prayer Time', image: 'assets/card_icon/prayer_time.png'),
+  CardItem(title: 'Hadees-e-Pak', image: 'assets/card_icon/hadees.png'),
   CardItem(title: 'Tasbih', image: 'assets/card_icon/tasbih.png'),
   CardItem(title: 'Dua', image: 'assets/card_icon/dua.png'),
   CardItem(title: 'Qibla Direction', image: 'assets/card_icon/qibla.png'),

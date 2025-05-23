@@ -99,16 +99,22 @@ class HomeView extends StatelessWidget {
                                 viewModel.navigateToPrayertime();
                                 break;
                               case 1:
-                                viewModel.navigateToTasbhih();
+                                viewModel.navigateToHadeesview();
                               case 2:
-                                viewModel.navigateToDua();
+                                viewModel.navigateToTasbhih();
+
                               case 3:
-                                viewModel.navigateToQiblaview();
+                                viewModel.navigateToDua();
+
                               case 4:
-                                viewModel.navigateToSurahView();
+                                viewModel.navigateToQiblaview();
+
                               case 5:
-                                viewModel.navigateToZakat();
+                                viewModel.navigateToSurahView();
+
                               case 6:
+                                viewModel.navigateToZakat();
+                              case 7:
                                 viewModel.navigateToKalma();
                                 break;
                               // Add more cases

@@ -1,6 +1,7 @@
 import 'package:noor/services/prayer_time_service.dart';
 import 'package:noor/services/quran_services.dart';
 import 'package:noor/view/dua/dua_view.dart';
+import 'package:noor/view/hadees/hadees_view.dart';
 import 'package:noor/view/home/home_view.dart';
 import 'package:noor/view/kalma/kalma_view.dart';
 import 'package:noor/view/prayer%20time/prayer_time_view.dart';
@@ -23,6 +24,7 @@ import 'package:stacked_services/stacked_services.dart';
     MaterialRoute(page: AyahView),
     MaterialRoute(page: ZakatView),
     MaterialRoute(page: KalmaView),
+    MaterialRoute(page: HadeesView),
   ],
   dependencies: [
     Singleton(classType: NavigationService),
