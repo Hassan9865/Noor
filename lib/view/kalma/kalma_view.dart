@@ -15,7 +15,13 @@ class KalmaView extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
-            title: const Text("Kalma", style: TextStyle(color: Colors.black)),
+            title: const Text(
+              "Kalma",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             centerTitle: true,
             elevation: 0,
             leading: IconButton(

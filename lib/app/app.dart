@@ -7,6 +7,7 @@ import 'package:noor/view/qibla/qibla_view.dart';
 import 'package:noor/view/quran/ayah/ayah_view.dart';
 import 'package:noor/view/quran/surah/surah_view.dart';
 import 'package:noor/view/tasbih/tasbih_view.dart';
+
 import 'package:noor/view/zakat/zakat_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';

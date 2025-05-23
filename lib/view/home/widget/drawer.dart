@@ -47,7 +47,7 @@ class MyDrawer extends StatelessWidget {
                   children: [
                     _buildDrawerItem(
                       icon: Icons.person_outline,
-                      title: 'Persone',
+                      title: 'Profile',
                       onTap: () {},
                     ),
 
