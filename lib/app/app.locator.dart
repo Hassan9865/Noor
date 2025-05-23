@@ -9,6 +9,7 @@
 import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
+import '../services/prayer_time_service.dart';
 import '../services/quran_services.dart';
 
 final locator = StackedLocator.instance;
@@ -24,4 +25,5 @@ Future<void> setupLocator({
 // Register dependencies
   locator.registerSingleton(NavigationService());
   locator.registerLazySingleton(() => QuranService());
+  locator.registerLazySingleton(() => PrayerTimeService());
 }
