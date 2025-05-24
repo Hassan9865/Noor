@@ -21,86 +21,92 @@ class PrayerTimeView extends StatelessWidget {
         final pt = model.prayerTimings;
         return Scaffold(
           appBar: AppBar(title: const Text("Prayer Times")),
-          body: Column(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(),
-                  border: Border.all(color: Colors.grey[400]!, width: 3),
+          body: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(),
+                    border: Border.all(color: Colors.grey[400]!, width: 3),
 
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      "الحديث:اَفْضَلُ ٱلْأَعْمَالِ ٱلصَّلَاةُ فِي وَقْتِهَا۔",
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 59, 78, 88),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-
-                    // Image.asset(
-                    //   'assets/card_icon/prayer_time.png',
-                    //   height: size / 7,
-                    // ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "سب سے افضل عمل وقت پر نماز پڑھنا ہے",
-                      style: TextStyle(
-                        fontSize: size * 0.05,
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-              pt == null
-                  ? const Text("Failed to load prayer times.")
-                  : Expanded(
-                    child: ListView(
-                      padding: const EdgeInsets.all(16),
-                      children: [
-                        TimeCard(
-                          'Fajr',
-                          '${pt.fajr}',
-                          Icons.nightlight_round,
-                          Colors.blue,
-                        ),
-                        TimeCard(
-                          'Dohar',
-                          '${pt.dhuhr}',
-                          Icons.sunny,
-                          Colors.orange,
-                        ),
-                        TimeCard(
-                          'Asr:"',
-                          '${pt.asr}',
-                          Icons.cloud,
-                          Colors.green,
-                        ),
-                        TimeCard(
-                          'Maghrib:',
-                          '${pt.maghrib}',
-                          Icons.wb_twilight,
-                          Colors.purple,
-                        ),
-                        TimeCard(
-                          'Isha:',
-                          '${pt.isha}',
-                          Icons.nights_stay,
-                          Colors.teal,
-                        ),
-                      ],
-                    ),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-            ],
+                  child: Column(
+                    children: [
+                      Text(
+                        "الحديث:اَفْضَلُ ٱلْأَعْمَالِ ٱلصَّلَاةُ فِي وَقْتِهَا۔",
+                        style: const TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 59, 78, 88),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+
+                      // Image.asset(
+                      //   'assets/card_icon/prayer_time.png',
+                      //   height: size / 7,
+                      // ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "سب سے افضل عمل وقت پر نماز پڑھنا ہے",
+                        style: TextStyle(
+                          fontSize: size * 0.05,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+                pt == null
+                    ? const Text(
+                      "Failed to load prayer times. Plz check your internet connection 🛜",
+                    )
+                    : Expanded(
+                      child: ListView(
+                        padding: const EdgeInsets.all(16),
+                        children: [
+                          TimeCard(
+                            'Fajr',
+                            '${pt.fajr}',
+                            Icons.nightlight_round,
+                            Colors.blue,
+                          ),
+                          TimeCard(
+                            'Dohar',
+                            '${pt.dhuhr}',
+                            Icons.sunny,
+                            Colors.orange,
+                          ),
+                          TimeCard(
+                            'Asr:',
+                            '${pt.asr}',
+                            Icons.cloud,
+                            Colors.green,
+                          ),
+                          TimeCard(
+                            'Maghrib:',
+                            '${pt.maghrib}',
+                            Icons.wb_twilight,
+                            Colors.purple,
+                          ),
+                          TimeCard(
+                            'Isha:',
+                            '${pt.isha}',
+                            Icons.nights_stay,
+                            Colors.teal,
+                          ),
+                        ],
+                      ),
+                    ),
+              ],
+            ),
           ),
         );
       },
