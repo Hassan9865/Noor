@@ -1,0 +1,602 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor-e-Islam - Complete Islamic Flutter App Documentation</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #1b5e20;
+            --accent-color: #8bc34a;
+            --light-bg: #f5f5f5;
+            --dark-text: #212121;
+            --light-text: #757575;
+            --code-bg: #f0f4c3;
+            --border-color: #c8e6c9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: var(--light-bg);
+            color: var(--dark-text);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .feature-card {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-item {
+            background: var(--code-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Noor-e-Islam - Complete Islamic Flutter App</h1>
+
+    <div class="section">
+        <h2>🕌 Introduction</h2>
+        <p>Noor-e-Islam is a comprehensive Islamic application built with Flutter using Stacked architecture. This MVP
+            includes all essential features for Muslim users with a clean, modern UI and optimized performance.</p>
+    </div>
+
+    <div class="section">
+        <h2>✨ Key Features</h2>
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>🕋 Prayer Times</h3>
+                <p>Accurate prayer times based on location calculation methods</p>
+            </div>
+            <div class="feature-card">
+                <h3>📖 Complete Quran</h3>
+                <p>Full Quran with Surah navigation, Ayah search, and page jump functionality</p>
+            </div>
+            <div class="feature-card">
+                <h3>🧮 Zakat Calculator</h3>
+                <p>Comprehensive calculator with gold/silver rate integration</p>
+            </div>
+            <div class="feature-card">
+                <h3>🕋 Qibla Direction</h3>
+                <p>Real-time compass showing accurate Qibla direction</p>
+            </div>
+            <div class="feature-card">
+                <h3>📿 Digital Tasbih</h3>
+                <p>Interactive counter</p>
+            </div>
+            <div class="feature-card">
+                <h3>📚 Islamic Resources</h3>
+                <p>Hadith collection, Daily Duas, and 6 Kalmas with translations</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ Technical Specifications</h2>
+        <h3>Tech Stack</h3>
+        <div class="tech-stack">
+            <span class="tech-item">Flutter</span>
+            <span class="tech-item">Dart</span>
+            <span class="tech-item">Stacked Architecture</span>
+            <span class="tech-item">Local Storage</span>
+            <span class="tech-item">API</span>
+            <span class="tech-item">Geolocation</span>
+        </div>
+
+        <h3>Key Technical Features</h3>
+        <ul>
+            <li>Clean, modular codebase following best practices</li>
+            <li>Responsive design for all screen sizes</li>
+            <li>Optimized performance with minimal dependencies</li>
+            <li>Well-documented code with clear comments</li>
+            <li>Easy to extend and customize</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📦 What's Included</h2>
+        <ul>
+            <li>Complete Flutter source code</li>
+            <li>All assets (images, icons, fonts)</li>
+            <li>Comprehensive documentation</li>
+            <li>Installation guide</li>
+            <li>Screenshot samples</li>
+            <li>6 months of free updates</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🚀 Getting Started</h2>
+        <ol>
+            <li>Install Flutter SDK (v3.0+)</li>
+            <li>Clone the repository</li>
+            <li>Run `flutter pub get`</li>
+            <li>Build and run on your device</li>
+        </ol>
+    </div>
+    <div class="section" id="requirements">
+        <h2>⚙️ System Requirements</h2>
+        <p>Before getting started, ensure your development environment meets these requirements:</p>
+
+        <h3>Development Environment</h3>
+        <ul>
+            <li><strong>Flutter SDK:</strong> 3.0 or higher (<a href="https://flutter.dev/docs/get-started/install"
+                    target="_blank">Installation Guide</a>)</li>
+            <li><strong>Dart:</strong> 2.17 or higher</li>
+            <li><strong>IDE:</strong> VS Code (recommended) or Android Studio</li>
+            <li><strong>Operating System:</strong> Windows/macOS/Linux</li>
+        </ul>
+
+        <h3>Device Support</h3>
+        <ul>
+            <li><strong>Android:</strong> 5.0 (API 21) or higher</li>
+            <li><strong>iOS:</strong> 11.0 or higher</li>
+        </ul>
+
+        <div class="warning">
+            <strong>Important:</strong> Make sure you have the Flutter environment properly set up before proceeding.
+            Run <code>flutter doctor</code> to verify your setup.
+        </div>
+    </div>
+    <div class="section" id="installation">
+        <h2>🚀 Installation Guide</h2>
+        <p>Follow these steps to set up the project:</p>
+
+        <h3>1. Getting Started</h3>
+        <ol>
+            <li>Download the package from CodeCanyon</li>
+            <li>Extract the ZIP file to your preferred location</li>
+        </ol>
+
+        <h3>2. Project Setup</h3>
+        <ol>
+            <li>Open the project folder in your IDE</li>
+            <li>Run the following command to get dependencies:
+                <pre>flutter pub get</pre>
+            </li>
+            <li>For iOS, navigate to the ios folder and run:
+                <pre>pod install</pre>
+            </li>
+        </ol>
+
+        <h3>3. Running the App</h3>
+        <ol>
+            <li>Connect a device or start an emulator</li>
+            <li>Run the app using:
+                <pre>flutter run</pre>
+            </li>
+            <li>For release build:
+                <pre>flutter run --release</pre>
+            </li>
+        </ol>
+
+        <div class="note">
+            <strong>Pro Tip:</strong> If you encounter any issues during setup, try running <code>flutter clean</code>
+            and then <code>flutter pub get</code> again.
+        </div>
+    </div>
+
+    <div class="section" id="structure">
+        <h2>📁 Project Structure</h2>
+        <p>Here's an overview of the project folder structure:</p>
+
+        <div class="file-structure">
+            📦 Noor-e-Islam<br>
+            ├── android/ # Android specific files<br>
+            ├── ios/ # iOS specific files<br>
+            ├── lib/
+            ├── app/ # Stacked setup, app router, constants<br>
+            ├── models/ # Data models<br>
+            ├── views/ # UI screens and widgets<br>
+            ├── services/ # Business logic, location, prayer time calc<br>
+            ├── utils/ # Helpers, utilities<br>
+            ├── main.dart # App entry point<br>
+            ├── assets/ # Static assets<br>
+            │ ├── fonts/ # Custom fonts<br>
+            │ ├── icons/ # App icons<br>
+            │ └── images/ # App images<br>
+            └── pubspec.yaml # Dependency management<br>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for your purchase! Happy coding! 🚀</p>
+        </div>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor-e-Islam - Complete Islamic Flutter App Documentation</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #1b5e20;
+            --accent-color: #8bc34a;
+            --light-bg: #f5f5f5;
+            --dark-text: #212121;
+            --light-text: #757575;
+            --code-bg: #f0f4c3;
+            --border-color: #c8e6c9;
+            --warning-bg: #fff8e1;
+            --warning-border: #ffc107;
+            --note-bg: #e3f2fd;
+            --note-border: #2196f3;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: var(--light-bg);
+            color: var(--dark-text);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tech-item {
+            background: var(--code-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+
+        code {
+            background: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .file-structure {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note {
+            background: var(--note-bg);
+            border-left: 4px solid var(--note-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--light-text);
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Noor-e-Islam - Complete Islamic Flutter App</h1>
+
+    <div class="section">
+        <h2>🕌 Introduction</h2>
+        <p>Noor-e-Islam is a comprehensive Islamic application built with Flutter using Stacked architecture. This MVP
+            includes all essential features for Muslim users with a clean, modern UI and optimized performance.</p>
+    </div>
+
+    <div class="section">
+        <h2>✨ Key Features</h2>
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>🕋 Prayer Times</h3>
+                <p>Accurate prayer times based on location with multiple calculation methods (Hanafi/Shafi)</p>
+            </div>
+            <div class="feature-card">
+                <h3>📖 Complete Quran</h3>
+                <p>Full Quran with Surah navigation, Ayah search, bookmarking, and direct page jump functionality</p>
+            </div>
+            <div class="feature-card">
+                <h3>🧮 Zakat Calculator</h3>
+                <p>Comprehensive calculator with gold/silver rate integration and detailed breakdown</p>
+            </div>
+            <div class="feature-card">
+                <h3>🕋 Qibla Direction</h3>
+                <p>Real-time compass showing accurate Qibla direction with device sensors</p>
+            </div>
+            <div class="feature-card">
+                <h3>📿 Digital Tasbih</h3>
+                <p>Interactive counter with vibration feedback and multiple counters</p>
+            </div>
+            <div class="feature-card">
+                <h3>📚 Islamic Resources</h3>
+                <p>Hadith collection, Daily Duas, 6 Kalmas with translations</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ Technical Specifications</h2>
+        <h3>Tech Stack</h3>
+        <div class="tech-stack">
+            <span class="tech-item">Flutter 3.0+</span>
+            <span class="tech-item">Dart 2.17+</span>
+            <span class="tech-item">Stacked Architecture</span>
+            <span class="tech-item">Hive Database</span>
+            <span class="tech-item">Geolocation API</span>
+            <span class="tech-item">flutter_qiblah</span>
+
+        </div>
+
+        <h3>Key Technical Features</h3>
+        <ul>
+            <li>Clean, modular codebase following best practices with proper separation of concerns</li>
+            <li>Fully responsive design that works on all screen sizes and devices</li>
+            <li>Optimized performance with minimal dependencies and efficient state management</li>
+            <li>Well-documented code with clear comments and documentation strings</li>
+            <li>Easy to extend and customize with configurable themes and settings</li>
+            <li>Support for both Android and iOS platforms</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📦 What's Included</h2>
+        <ul>
+            <li><strong>Complete Flutter source code</strong> - Production-ready codebase</li>
+            <li><strong>All assets</strong> - Images, icons, fonts, and sound files</li>
+            <li><strong>Comprehensive documentation</strong> - Detailed developer documentation</li>
+            <li><strong>Installation guide</strong> - Step-by-step setup instructions</li>
+            <li><strong>Screenshot samples</strong> - Marketing and promotional materials</li>
+            <li><strong>6 months of free updates</strong> - Regular feature additions and bug fixes</li>
+        </ul>
+    </div>
+
+    <div class="section" id="requirements">
+        <h2>⚙️ System Requirements</h2>
+        <p>Before getting started, ensure your development environment meets these requirements:</p>
+
+        <h3>Development Environment</h3>
+        <ul>
+            <li><strong>Flutter SDK:</strong> 3.0 or higher (<a href="https://flutter.dev/docs/get-started/install"
+                    target="_blank">Installation Guide</a>)</li>
+            <li><strong>Dart:</strong> 2.17 or higher</li>
+            <li><strong>IDE:</strong> VS Code (recommended) or Android Studio with Flutter plugin</li>
+            <li><strong>Operating System:</strong> Windows 10/11, macOS 10.14+, or Linux</li>
+        </ul>
+
+        <h3>Device Support</h3>
+        <ul>
+            <li><strong>Android:</strong> 5.0 (API 21) or higher</li>
+            <li><strong>iOS:</strong> 11.0 or higher</li>
+            <li><strong>Web:</strong> Chrome, Firefox, Safari, Edge (latest versions)</li>
+        </ul>
+
+        <div class="warning">
+            <strong>Important:</strong> Make sure you have the Flutter environment properly set up before proceeding.
+            Run <code>flutter doctor</code> to verify your setup.
+        </div>
+    </div>
+
+    <div class="section" id="installation">
+        <h2>🚀 Installation Guide</h2>
+        <p>Follow these steps to set up the project:</p>
+
+        <h3>1. Getting Started</h3>
+        <ol>
+            <li>Download the package from CodeCanyon or your purchase source</li>
+            <li>Extract the ZIP file to your preferred development directory</li>
+        </ol>
+
+        <h3>2. Project Setup</h3>
+        <ol>
+            <li>Open the project folder in your preferred IDE</li>
+            <li>Run the following command to get dependencies:
+                <pre>flutter pub get</pre>
+            </li>
+            <li>For iOS, navigate to the ios folder and run:
+                <pre>pod install</pre>
+            </li>
+            <li>Configure any necessary API keys in the configuration files</li>
+        </ol>
+
+        <h3>3. Running the App</h3>
+        <ol>
+            <li>Connect a physical device or start an emulator/simulator</li>
+            <li>Run the app using:
+                <pre>flutter run</pre>
+            </li>
+            <li>For release build:
+                <pre>flutter run --release</pre>
+            </li>
+        </ol>
+
+        <div class="note">
+            <strong>Pro Tip:</strong> If you encounter any issues during setup, try running <code>flutter clean</code>
+            and then <code>flutter pub get</code> again. Also ensure your Flutter SDK is up to date.
+        </div>
+    </div>
+
+    <div class="section" id="structure">
+        <h2>📁 Project Structure</h2>
+        <p>Here's an overview of the well-organized project folder structure:</p>
+
+        <div class="file-structure">
+            📦 noor_e_islam
+            ├── android/ # Android platform-specific files<br>
+            ├── ios/ # iOS platform-specific files<br>
+            ├── lib/ # Main application source<br>
+            │ ├── app/ # Core application setup<br>
+            │ │ ├── app.dart # Main app configuration<br>
+            │ │ ├── app_router.dart # Route management<br>
+            │ │ └── constants/ # App-wide constants<br>
+            │ ├── features/ # Feature modules<br>
+            │ │ ├── prayer_time/ # Prayer time feature<br>
+            │ │ ├── quran/ # Quran feature<br>
+            │ │ ├── qibla/ # Qibla direction<br>
+            │ │ └── ... # Other features<br>
+            │ ├── models/ # Data models<br>
+            │ ├── services/ # Business logic services<br>
+            │ ├── utils/ # Utilities and helpers<br>
+            │ ├── widgets/ # Reusable widgets<br>
+            │ └── main.dart # Application entry point<br>
+            ├── assets/ # Static assets<br>
+            │ ├── fonts/ # Custom fonts<br>
+            │ ├── icons/ # App icons<br>
+            │ ├── images/ # App images<br>
+            └── pubspec.yaml # Dependency management<br>
+        </div>
+
+        <h3>Key Files to Customize</h3>
+        <ul>
+            <li><code>assets/</code> - Custom fonts, images, and icons</li>
+            <li><code>pubspec.yaml</code> - Dependency management and metadata</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Noor-e-Islam Flutter App. All rights reserved.</p>
+        <p>Thank you for your purchase! Happy coding! 🚀</p>
+    </div>
+</body>
+
+</html>
