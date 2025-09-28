@@ -22,11 +22,11 @@ Noor-e-Islam is a modern, clean, and fully functional Islamic app built using Fl
 
 # 📱 ScreenShots
 
-<img width="1419" height="2796" alt="Image" src="https://github.com/user-attachments/assets/678995d4-14b3-4a54-a893-6e115a66ca7b" />
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/678995d4-14b3-4a54-a893-6e115a66ca7b" />
 
-<img width="1419" height="2796" alt="Image" src="https://github.com/user-attachments/assets/ff9d7a32-a6c7-40b5-a869-6085140538a5" />
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/ff9d7a32-a6c7-40b5-a869-6085140538a5" />
 
-<img width="1419" height="2796" alt="Image" src="https://github.com/user-attachments/assets/c8740bc6-65b4-4d37-bb58-22bec99069d7" />
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/c8740bc6-65b4-4d37-bb58-22bec99069d7" />
 
 ## 🛠️ Tech Stack
 
