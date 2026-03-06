@@ -39,10 +39,23 @@ class KalmaView extends StatelessWidget {
             ),
             child: LayoutBuilder(
               builder: (context, constraints) {
+                bool isTablet = constraints.maxWidth >= 600;
+
+                double cardWidth =
+                    isTablet
+                        ? constraints.maxWidth * 0.6
+                        : constraints.maxWidth * 0.9;
+
+                double titleSize = isTablet ? 26 : 18;
+                double arabicSize = isTablet ? 32 : 22;
+                double meaningSize = isTablet ? 20 : 14;
+                double buttonText = isTablet ? 18 : 14;
+                double iconSize = isTablet ? 26 : 20;
+
                 return SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 30,
-                    horizontal: 16,
+                  padding: EdgeInsets.symmetric(
+                    vertical: isTablet ? 40 : 30,
+                    horizontal: isTablet ? 40 : 16,
                   ),
 
                   scrollDirection: Axis.vertical,
@@ -56,8 +69,8 @@ class KalmaView extends StatelessWidget {
                           const Spacer(flex: 1),
                           Center(
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              padding: const EdgeInsets.all(20),
+                              width: cardWidth,
+                              padding: EdgeInsets.all(isTablet ? 30 : 20),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
@@ -71,17 +84,17 @@ class KalmaView extends StatelessWidget {
                                   Text(
                                     viewModel.currentKalma.title,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.05,
+                                      fontSize: titleSize,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.grey,
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  const SizedBox(height: 10),
+                                  SizedBox(height: isTablet ? 20 : 10),
                                   Text(
                                     viewModel.currentKalma.arabic,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.07,
+                                      fontSize: arabicSize,
                                       color: Colors.black,
                                     ),
                                     textAlign: TextAlign.center,
@@ -90,7 +103,7 @@ class KalmaView extends StatelessWidget {
                                   Text(
                                     viewModel.currentKalma.meaning,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.04,
+                                      fontSize: meaningSize,
                                       color: Colors.black54,
                                     ),
                                     textAlign: TextAlign.center,
@@ -99,31 +112,37 @@ class KalmaView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 40),
+                          SizedBox(height: isTablet ? 60 : 40),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ElevatedButton.icon(
-                                icon: const Icon(Icons.arrow_back, size: 20),
-                                label: const Text("Back"),
+                                icon: Icon(Icons.arrow_back, size: iconSize),
+                                label: Text(
+                                  "Back",
+                                  style: TextStyle(fontSize: buttonText),
+                                ),
                                 style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 20,
-                                    vertical: 12,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isTablet ? 30 : 20,
+                                    vertical: isTablet ? 16 : 12,
                                   ),
                                 ),
                                 onPressed: () {
                                   viewModel.backkalma();
                                 },
                               ),
-                              const SizedBox(width: 20),
+                              SizedBox(width: isTablet ? 40 : 20),
                               ElevatedButton.icon(
-                                icon: const Icon(Icons.navigate_next, size: 20),
-                                label: const Text("Next"),
+                                icon: Icon(Icons.navigate_next, size: iconSize),
+                                label: Text(
+                                  "Next",
+                                  style: TextStyle(fontSize: buttonText),
+                                ),
                                 style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 25,
-                                    vertical: 12,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isTablet ? 35 : 25,
+                                    vertical: isTablet ? 16 : 12,
                                   ),
                                 ),
                                 onPressed: () {
@@ -132,7 +151,7 @@ class KalmaView extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const Spacer(flex: 1),
+                          const Spacer(),
                         ],
                       ),
                     ),
