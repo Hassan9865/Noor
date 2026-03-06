@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:noor/core/responsive/responsive.dart';
 import 'package:noor/list/card_item.dart';
 import 'package:noor/view/home/home_viewModel.dart';
 import 'package:noor/view/home/widget/my_card.dart';
@@ -21,11 +23,11 @@ class HomeView extends StatelessWidget {
           body: SafeArea(
             child: Container(
               decoration: BoxDecoration(
-                // gradient: LinearGradient(
-                //   begin: Alignment.topCenter,
-                //   end: Alignment.bottomCenter,
-                //   colors: [Colors.teal[50]!, Colors.blue[50]!],
-                // ),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.teal[50]!, Colors.blue[50]!],
+                ),
                 color: Colors.teal[50],
               ),
               child: Column(
@@ -61,32 +63,31 @@ class HomeView extends StatelessWidget {
                         Text(
                           "بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ",
                           style: TextStyle(
-                            fontSize: Txtsize * 0.05,
+                            fontSize: 15.sp,
                             fontWeight: FontWeight.bold,
                             color: Colors.blue[800],
                           ),
                         ),
-                        const SizedBox(height: 8),
-                        Text(
-                          "Advance Muslim App",
-                          style: TextStyle(
-                            fontSize: Txtsize * 0.06,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.green[800],
-                          ),
-                        ),
+                        SizedBox(height: 8.sp),
+                        // Text(
+                        //   "Advance Muslim App",
+                        //   style: TextStyle(
+                        //     fontSize: 18.sp,
+                        //     fontWeight: FontWeight.w500,
+                        //     color: Colors.green[800],
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
                   Expanded(
                     child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 12.0,
-                            crossAxisSpacing: 12.0,
-                            childAspectRatio: 1.1,
-                          ),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: Responsive.isTablet(context) ? 2 : 4,
+                        mainAxisSpacing: 12.0,
+                        crossAxisSpacing: 12.0,
+                        childAspectRatio: 1.1,
+                      ),
                       padding: const EdgeInsets.all(16.0),
                       itemCount: cardItem.length,
                       itemBuilder: (context, index) {

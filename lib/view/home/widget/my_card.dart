@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noor/view/home/home_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -16,7 +17,7 @@ class MyCard extends ViewModelWidget<HomeviewModel> {
 
   @override
   Widget build(BuildContext context, HomeviewModel viewModel) {
-    final size = MediaQuery.of(context).size.width;
+    // final size = MediaQuery.of(context).size.width;
 
     return Card(
       elevation: 4,
@@ -36,13 +37,13 @@ class MyCard extends ViewModelWidget<HomeviewModel> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(imagePath, height: size / 7),
-              const SizedBox(height: 16),
+              Image.asset(imagePath, height: 100.h, fit: BoxFit.contain),
+              SizedBox(height: 12.h),
               Text(
                 text,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: size * 0.04,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.blue[800],
                 ),
