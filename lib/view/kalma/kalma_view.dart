@@ -7,7 +7,7 @@ class KalmaView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Txtsize = MediaQuery.of(context).size.width;
+    // final Txtsize = MediaQuery.of(context).size.width;
 
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => KalmaViewmodel(),
@@ -46,9 +46,9 @@ class KalmaView extends StatelessWidget {
                         ? constraints.maxWidth * 0.6
                         : constraints.maxWidth * 0.9;
 
-                double titleSize = isTablet ? 26 : 18;
-                double arabicSize = isTablet ? 32 : 22;
-                double meaningSize = isTablet ? 20 : 14;
+                double titleSize = isTablet ? 30 : 18;
+                double arabicSize = isTablet ? 36 : 22;
+                double meaningSize = isTablet ? 24 : 14;
                 double buttonText = isTablet ? 18 : 14;
                 double iconSize = isTablet ? 26 : 20;
 

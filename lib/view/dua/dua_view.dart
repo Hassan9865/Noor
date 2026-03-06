@@ -7,7 +7,7 @@ class DuaView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Txtsize = MediaQuery.of(context).size.width;
+    // final Txtsize = MediaQuery.of(context).size.width;
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => DuaViewmodel(),
       builder: (context, DuaViewmodel viewModel, child) {
@@ -32,10 +32,22 @@ class DuaView extends StatelessWidget {
             ),
             child: LayoutBuilder(
               builder: (context, constraints) {
+                bool isTablet = constraints.maxWidth >= 600;
+
+                double cardWidth =
+                    isTablet
+                        ? constraints.maxWidth * 0.6
+                        : constraints.maxWidth * 0.9;
+
+                double titleSize = isTablet ? 30 : 18;
+                double arabicSize = isTablet ? 36 : 22;
+                double meaningSize = isTablet ? 24 : 14;
+                double buttonText = isTablet ? 18 : 14;
+                double iconSize = isTablet ? 26 : 20;
                 return SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 30,
-                    horizontal: 16,
+                  padding: EdgeInsets.symmetric(
+                    vertical: isTablet ? 30 : 20,
+                    horizontal: isTablet ? 16 : 12,
                   ),
 
                   scrollDirection: Axis.vertical,
@@ -49,7 +61,7 @@ class DuaView extends StatelessWidget {
                           const Spacer(flex: 1),
                           Center(
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
+                              width: cardWidth,
                               padding: const EdgeInsets.all(20),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -64,17 +76,17 @@ class DuaView extends StatelessWidget {
                                   Text(
                                     viewModel.currentDua.name,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.05,
+                                      fontSize: titleSize,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.grey,
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  const SizedBox(height: 10),
+                                  SizedBox(height: isTablet ? 20 : 10),
                                   Text(
                                     viewModel.currentDua.dua,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.07,
+                                      fontSize: arabicSize,
                                       color: Colors.black,
                                     ),
                                     textAlign: TextAlign.center,
@@ -83,7 +95,7 @@ class DuaView extends StatelessWidget {
                                   Text(
                                     viewModel.currentDua.meaning,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.04,
+                                      fontSize: meaningSize,
                                       color: Colors.black54,
                                     ),
                                     textAlign: TextAlign.center,
@@ -92,17 +104,20 @@ class DuaView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 40),
+                          SizedBox(height: isTablet ? 40 : 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ElevatedButton.icon(
-                                icon: const Icon(Icons.arrow_back, size: 20),
-                                label: const Text("Back"),
+                                icon: Icon(Icons.arrow_back, size: iconSize),
+                                label: Text(
+                                  "Back",
+                                  style: TextStyle(fontSize: buttonText),
+                                ),
                                 style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 20,
-                                    vertical: 12,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isTablet ? 20 : 12,
+                                    vertical: isTablet ? 12 : 8,
                                   ),
                                 ),
                                 onPressed: () {
@@ -111,12 +126,15 @@ class DuaView extends StatelessWidget {
                               ),
                               const SizedBox(width: 20),
                               ElevatedButton.icon(
-                                icon: const Icon(Icons.navigate_next, size: 20),
-                                label: const Text("Next"),
+                                icon: Icon(Icons.navigate_next, size: iconSize),
+                                label: Text(
+                                  "Next",
+                                  style: TextStyle(fontSize: buttonText),
+                                ),
                                 style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 25,
-                                    vertical: 12,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isTablet ? 25 : 12,
+                                    vertical: isTablet ? 12 : 8,
                                   ),
                                 ),
                                 onPressed: () {

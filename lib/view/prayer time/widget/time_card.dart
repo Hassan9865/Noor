@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noor/view/prayer%20time/prayer_time_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -41,76 +40,96 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
             ? 'Passed'
             : '${timeRemaining.inHours}h ${timeRemaining.inMinutes.remainder(60)}m left';
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 6),
-      child: Card(
-        elevation: isCurrentNamaz ? 8 : 4,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: BorderSide(color: Colors.grey, width: 2),
-        ),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(16),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isTablet = constraints.maxWidth >= 600;
 
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                children: [
-                  // Namaz Icon
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: iconcolor.withOpacity(0.2),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(icon, color: iconcolor, size: 12.sp),
-                  ),
-                  SizedBox(width: 6.w),
+        // double cardWidth =
+        //     isTablet
+        //         ? constraints.maxWidth * 0.6
+        //         : constraints.maxWidth * 0.9;
 
-                  // Namaz Info
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          namaz,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontSize: 8.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
+        double titleSize = isTablet ? 30 : 18;
+        // double arabicSize = isTablet ? 36 : 22;
+        double meaningSize = isTablet ? 24 : 14;
+        // double buttonText = isTablet ? 18 : 14;
+        double iconSize = isTablet ? 26 : 23;
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 6),
+
+          child: Card(
+            elevation: isCurrentNamaz ? 8 : 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+              side: BorderSide(color: Colors.grey, width: 2),
+            ),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16),
+
+              child: Container(
+                child: Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      // Namaz Icon
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: iconcolor.withOpacity(0.2),
+                          shape: BoxShape.circle,
                         ),
-                        Text(
-                          remainingText,
-                          style: theme.textTheme.bodySmall?.copyWith(
-                            fontSize: remainingText == 'Passed' ? 6.sp : 7.sp,
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                        child: Icon(icon, color: iconcolor, size: iconSize),
+                      ),
+                      SizedBox(width: isTablet ? 20 : 12),
 
-                  // Time
-                  Text(
-                    time,
-                    style: theme.textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 10.sp,
-                      color:
-                          isCurrentNamaz
-                              ? const Color.fromARGB(255, 26, 78, 168)
-                              : Colors.black,
-                      // color: const Color.fromARGB(255, 26, 78, 168),
-                    ),
+                      // Namaz Info
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              namaz,
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                fontSize: titleSize,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              remainingText,
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                fontSize:
+                                    remainingText == 'Passed'
+                                        ? 12
+                                        : meaningSize,
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Time
+                      Text(
+                        time,
+                        style: theme.textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: titleSize,
+                          color:
+                              isCurrentNamaz
+                                  ? const Color.fromARGB(255, 26, 78, 168)
+                                  : Colors.black,
+                          // color: const Color.fromARGB(255, 26, 78, 168),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

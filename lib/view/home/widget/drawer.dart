@@ -24,7 +24,10 @@ class MyDrawer extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const SizedBox(height: 20),
-                    Image.asset('assets/card_icon/moon.png', height: size / 7),
+                    Image.asset(
+                      'assets/card_icon/moon.png',
+                      height: size * 0.03,
+                    ),
 
                     const SizedBox(height: 10),
                     const Text(

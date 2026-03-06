@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
                         Builder(
                           builder:
                               (context) => IconButton(
-                                icon: Icon(Icons.menu, size: Txtsize * 0.06),
+                                icon: Icon(Icons.menu, size: Txtsize * 0.04),
                                 onPressed: () {
                                   Scaffold.of(context).openDrawer();
                                 },

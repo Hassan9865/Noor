@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noor/view/hadees/hadees_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -47,9 +46,9 @@ class HadeesView extends StatelessWidget {
                         ? constraints.maxWidth * 0.6
                         : constraints.maxWidth * 0.9;
 
-                double titleSize = isTablet ? 26 : 18;
-                double arabicSize = isTablet ? 32 : 22;
-                double meaningSize = isTablet ? 20 : 14;
+                double titleSize = isTablet ? 30 : 18;
+                double arabicSize = isTablet ? 36 : 22;
+                double meaningSize = isTablet ? 24 : 14;
                 double buttonText = isTablet ? 18 : 14;
                 double iconSize = isTablet ? 26 : 20;
                 return SingleChildScrollView(
