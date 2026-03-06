@@ -27,108 +27,131 @@ class TasbihView extends StatelessWidget {
                 colors: [Colors.teal[50]!, Colors.blue[50]!],
               ),
             ),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Zikr Display
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(),
-                      border: Border.all(color: Colors.grey[400]!, width: 3),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                bool isTablet = constraints.maxWidth >= 600;
 
-                      borderRadius: BorderRadius.circular(20),
+                double cardWidth =
+                    isTablet
+                        ? constraints.maxWidth * 0.6
+                        : constraints.maxWidth * 0.9;
+
+                double titleSize = isTablet ? 26 : 18;
+                double arabicSize = isTablet ? 32 : 22;
+                double meaningSize = isTablet ? 20 : 14;
+                double buttonText = isTablet ? 18 : 14;
+                double iconSize = isTablet ? 26 : 20;
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Zikr Display
+                    Container(
+                      width: cardWidth,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(),
+                        border: Border.all(color: Colors.grey[400]!, width: 3),
+
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            viewModel.currentZikr.arabic,
+                            style: TextStyle(
+                              fontSize: arabicSize,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            viewModel.currentZikr.meaning,
+                            style: TextStyle(
+                              fontSize: meaningSize,
+                              color: Colors.black54,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
                     ),
-                    child: Column(
-                      children: [
-                        Text(
-                          viewModel.currentZikr.arabic,
-                          style: const TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+
+                    SizedBox(height: isTablet ? 40 : 20),
+
+                    // Counter Circle
+                    GestureDetector(
+                      onTap: viewModel.incrementCounter,
+                      child: Container(
+                        width: isTablet ? 150 : 120,
+                        height: isTablet ? 150 : 120,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.grey[400]!,
+                            width: 3,
                           ),
-                          textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 10),
-                        Text(
-                          viewModel.currentZikr.meaning,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.black54,
+                        child: Center(
+                          child: Text(
+                            viewModel.counter.toString(),
+                            style: TextStyle(
+                              fontSize: isTablet ? 48 : 36,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black38,
+                            ),
                           ),
-                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(height: isTablet ? 40 : 20),
+
+                    // Buttons Row
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Reset Button
+                        ElevatedButton.icon(
+                          icon: Icon(Icons.refresh, size: iconSize),
+                          label: Text(
+                            "Reset",
+                            style: TextStyle(fontSize: buttonText),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            // primary: Colors.red.shade400,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 12,
+                            ),
+                          ),
+                          onPressed: viewModel.resetCounter,
+                        ),
+
+                        const SizedBox(width: 20),
+
+                        // Next Button
+                        ElevatedButton.icon(
+                          icon: Icon(Icons.navigate_next, size: iconSize),
+                          label: Text(
+                            "Next",
+                            style: TextStyle(fontSize: buttonText),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 25,
+                              vertical: 12,
+                            ),
+                          ),
+                          onPressed: viewModel.nextZikr,
                         ),
                       ],
                     ),
-                  ),
-
-                  const SizedBox(height: 40),
-
-                  // Counter Circle
-                  GestureDetector(
-                    onTap: viewModel.incrementCounter,
-                    child: Container(
-                      width: 150,
-                      height: 150,
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(),
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.grey[400]!, width: 3),
-                      ),
-                      child: Center(
-                        child: Text(
-                          viewModel.counter.toString(),
-                          style: const TextStyle(
-                            fontSize: 48,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black38,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  const SizedBox(height: 40),
-
-                  // Buttons Row
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Reset Button
-                      ElevatedButton.icon(
-                        icon: const Icon(Icons.refresh, size: 20),
-                        label: const Text("Reset"),
-                        style: ElevatedButton.styleFrom(
-                          // primary: Colors.red.shade400,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 12,
-                          ),
-                        ),
-                        onPressed: viewModel.resetCounter,
-                      ),
-
-                      const SizedBox(width: 20),
-
-                      // Next Button
-                      ElevatedButton.icon(
-                        icon: const Icon(Icons.navigate_next, size: 20),
-                        label: const Text("Next"),
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 25,
-                            vertical: 12,
-                          ),
-                        ),
-                        onPressed: viewModel.nextZikr,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                  ],
+                );
+              },
             ),
           ),
         );
