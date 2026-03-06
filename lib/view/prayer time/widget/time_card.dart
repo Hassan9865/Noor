@@ -44,15 +44,9 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
       builder: (context, constraints) {
         bool isTablet = constraints.maxWidth >= 600;
 
-        // double cardWidth =
-        //     isTablet
-        //         ? constraints.maxWidth * 0.6
-        //         : constraints.maxWidth * 0.9;
-
         double titleSize = isTablet ? 30 : 18;
-        // double arabicSize = isTablet ? 36 : 22;
         double meaningSize = isTablet ? 24 : 14;
-        // double buttonText = isTablet ? 18 : 14;
+
         double iconSize = isTablet ? 26 : 23;
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 6),
