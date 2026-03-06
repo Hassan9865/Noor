@@ -23,7 +23,6 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
 
   @override
   Widget build(BuildContext context, PrayerTimeViewModel viewModel) {
-    final size = MediaQuery.of(context).size;
     final theme = Theme.of(context);
     final now = DateTime.now();
     final timeParts = time.split(':');

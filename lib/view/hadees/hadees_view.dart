@@ -8,7 +8,7 @@ class HadeesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Txtsize = MediaQuery.of(context).size.width;
+    // final Txtsize = MediaQuery.of(scontext).size.width;
 
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => HadeesViewmodel(),

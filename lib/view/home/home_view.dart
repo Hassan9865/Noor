@@ -49,7 +49,7 @@ class HomeView extends StatelessWidget {
                         Text(
                           currentDay,
                           style: TextStyle(
-                            fontSize: Txtsize * 0.04,
+                            fontSize: Txtsize * 0.03,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -63,7 +63,7 @@ class HomeView extends StatelessWidget {
                         Text(
                           "بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ",
                           style: TextStyle(
-                            fontSize: 15.sp,
+                            fontSize: Txtsize * 0.05,
                             fontWeight: FontWeight.bold,
                             color: Colors.blue[800],
                           ),
@@ -83,7 +83,7 @@ class HomeView extends StatelessWidget {
                   Expanded(
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: Responsive.isTablet(context) ? 2 : 4,
+                        crossAxisCount: Responsive.isMobile(context) ? 2 : 4,
                         mainAxisSpacing: 12.0,
                         crossAxisSpacing: 12.0,
                         childAspectRatio: 1.1,
