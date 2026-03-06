@@ -40,10 +40,22 @@ class HadeesView extends StatelessWidget {
             ),
             child: LayoutBuilder(
               builder: (context, constraints) {
+                bool isTablet = constraints.maxWidth >= 600;
+
+                double cardWidth =
+                    isTablet
+                        ? constraints.maxWidth * 0.6
+                        : constraints.maxWidth * 0.9;
+
+                double titleSize = isTablet ? 26 : 18;
+                double arabicSize = isTablet ? 32 : 22;
+                double meaningSize = isTablet ? 20 : 14;
+                double buttonText = isTablet ? 18 : 14;
+                double iconSize = isTablet ? 26 : 20;
                 return SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 30,
-                    horizontal: 16,
+                  padding: EdgeInsets.symmetric(
+                    vertical: isTablet ? 40 : 30,
+                    horizontal: isTablet ? 40 : 16,
                   ),
 
                   scrollDirection: Axis.vertical,
@@ -57,7 +69,7 @@ class HadeesView extends StatelessWidget {
                           const Spacer(flex: 1),
                           Center(
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
+                              width: cardWidth,
                               padding: const EdgeInsets.all(20),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -72,17 +84,17 @@ class HadeesView extends StatelessWidget {
                                   Text(
                                     viewModel.currentHadess.title,
                                     style: TextStyle(
-                                      fontSize: 12.sp,
+                                      fontSize: titleSize,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.grey,
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  SizedBox(height: 8.h),
+                                  SizedBox(height: isTablet ? 20 : 10),
                                   Text(
                                     viewModel.currentHadess.arabic,
                                     style: TextStyle(
-                                      fontSize: 12.sp,
+                                      fontSize: arabicSize,
                                       color: Colors.black,
                                     ),
                                     textAlign: TextAlign.center,
@@ -91,7 +103,7 @@ class HadeesView extends StatelessWidget {
                                   Text(
                                     viewModel.currentHadess.meaning,
                                     style: TextStyle(
-                                      fontSize: 12.sp,
+                                      fontSize: meaningSize,
                                       color: Colors.black54,
                                     ),
                                     textAlign: TextAlign.center,
@@ -100,20 +112,20 @@ class HadeesView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 40.h),
+                          SizedBox(height: isTablet ? 60 : 40),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ElevatedButton.icon(
-                                icon: Icon(Icons.arrow_back, size: 8.sp),
+                                icon: Icon(Icons.arrow_back, size: iconSize),
                                 label: Text(
                                   "Back",
-                                  style: TextStyle(fontSize: 8.sp),
+                                  style: TextStyle(fontSize: buttonText),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 20,
-                                    vertical: 12,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isTablet ? 30 : 20,
+                                    vertical: isTablet ? 16 : 12,
                                   ),
                                 ),
                                 onPressed: () {
@@ -122,15 +134,15 @@ class HadeesView extends StatelessWidget {
                               ),
                               const SizedBox(width: 20),
                               ElevatedButton.icon(
-                                icon: Icon(Icons.navigate_next, size: 8.sp),
+                                icon: Icon(Icons.navigate_next, size: iconSize),
                                 label: Text(
                                   "Next",
-                                  style: TextStyle(fontSize: 8.sp),
+                                  style: TextStyle(fontSize: buttonText),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 25,
-                                    vertical: 12,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isTablet ? 35 : 25,
+                                    vertical: isTablet ? 16 : 12,
                                   ),
                                 ),
                                 onPressed: () {
