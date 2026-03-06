@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noor/view/hadees/hadees_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -71,17 +72,17 @@ class HadeesView extends StatelessWidget {
                                   Text(
                                     viewModel.currentHadess.title,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.05,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.grey,
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  const SizedBox(height: 10),
+                                  SizedBox(height: 8.h),
                                   Text(
                                     viewModel.currentHadess.arabic,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.07,
+                                      fontSize: 12.sp,
                                       color: Colors.black,
                                     ),
                                     textAlign: TextAlign.center,
@@ -90,7 +91,7 @@ class HadeesView extends StatelessWidget {
                                   Text(
                                     viewModel.currentHadess.meaning,
                                     style: TextStyle(
-                                      fontSize: Txtsize * 0.04,
+                                      fontSize: 12.sp,
                                       color: Colors.black54,
                                     ),
                                     textAlign: TextAlign.center,
@@ -99,13 +100,16 @@ class HadeesView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 40),
+                          SizedBox(height: 40.h),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ElevatedButton.icon(
-                                icon: const Icon(Icons.arrow_back, size: 20),
-                                label: const Text("Back"),
+                                icon: Icon(Icons.arrow_back, size: 8.sp),
+                                label: Text(
+                                  "Back",
+                                  style: TextStyle(fontSize: 8.sp),
+                                ),
                                 style: ElevatedButton.styleFrom(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 20,
@@ -118,8 +122,11 @@ class HadeesView extends StatelessWidget {
                               ),
                               const SizedBox(width: 20),
                               ElevatedButton.icon(
-                                icon: const Icon(Icons.navigate_next, size: 20),
-                                label: const Text("Next"),
+                                icon: Icon(Icons.navigate_next, size: 8.sp),
+                                label: Text(
+                                  "Next",
+                                  style: TextStyle(fontSize: 8.sp),
+                                ),
                                 style: ElevatedButton.styleFrom(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 25,
