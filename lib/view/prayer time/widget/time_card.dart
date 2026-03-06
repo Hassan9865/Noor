@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noor/view/prayer%20time/prayer_time_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -47,7 +48,7 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
         elevation: isCurrentNamaz ? 8 : 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          // side: BorderSide(color: Colors.grey, width: 2),
+          side: BorderSide(color: Colors.grey, width: 2),
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
@@ -64,13 +65,9 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
                       color: iconcolor.withOpacity(0.2),
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
-                      icon,
-                      color: iconcolor,
-                      size: size.width * 0.06,
-                    ),
+                    child: Icon(icon, color: iconcolor, size: 12.sp),
                   ),
-                  const SizedBox(width: 15),
+                  SizedBox(width: 6.w),
 
                   // Namaz Info
                   Expanded(
@@ -80,6 +77,7 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
                         Text(
                           namaz,
                           style: theme.textTheme.titleMedium?.copyWith(
+                            fontSize: 8.sp,
                             fontWeight: FontWeight.w600,
                             color: Colors.black,
                           ),
@@ -87,6 +85,7 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
                         Text(
                           remainingText,
                           style: theme.textTheme.bodySmall?.copyWith(
+                            fontSize: remainingText == 'Passed' ? 6.sp : 7.sp,
                             color: Colors.grey[600],
                           ),
                         ),
@@ -99,7 +98,12 @@ class TimeCard extends ViewModelWidget<PrayerTimeViewModel> {
                     time,
                     style: theme.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 26, 78, 168),
+                      fontSize: 10.sp,
+                      color:
+                          isCurrentNamaz
+                              ? const Color.fromARGB(255, 26, 78, 168)
+                              : Colors.black,
+                      // color: const Color.fromARGB(255, 26, 78, 168),
                     ),
                   ),
                 ],

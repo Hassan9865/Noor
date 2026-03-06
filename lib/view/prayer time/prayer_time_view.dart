@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noor/view/prayer%20time/prayer_time_viewModel.dart';
 import 'package:noor/view/prayer%20time/widget/time_card.dart';
 import 'package:stacked/stacked.dart';
@@ -39,8 +40,8 @@ class PrayerTimeView extends StatelessWidget {
                     children: [
                       Text(
                         "الحديث:اَفْضَلُ ٱلْأَعْمَالِ ٱلصَّلَاةُ فِي وَقْتِهَا۔",
-                        style: const TextStyle(
-                          fontSize: 28,
+                        style: TextStyle(
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 59, 78, 88),
                         ),
@@ -51,11 +52,11 @@ class PrayerTimeView extends StatelessWidget {
                       //   'assets/card_icon/prayer_time.png',
                       //   height: size / 7,
                       // ),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
                       Text(
                         "سب سے افضل عمل وقت پر نماز پڑھنا ہے",
                         style: TextStyle(
-                          fontSize: size * 0.05,
+                          fontSize: 11.sp,
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
                         ),
@@ -70,7 +71,7 @@ class PrayerTimeView extends StatelessWidget {
                     )
                     : Expanded(
                       child: ListView(
-                        padding: const EdgeInsets.all(16),
+                        padding: EdgeInsets.all(12.w),
                         children: [
                           TimeCard(
                             'Fajr',
