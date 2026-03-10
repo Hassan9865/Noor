@@ -5,6 +5,7 @@ import 'package:noor/list/card_item.dart';
 import 'package:noor/view/home/home_viewModel.dart';
 import 'package:noor/view/home/widget/my_card.dart';
 import 'package:noor/view/home/widget/drawer.dart';
+import 'package:noor/view/quran/quran%20option/quran_option_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:intl/intl.dart';
 
@@ -111,7 +112,13 @@ class HomeView extends StatelessWidget {
                                 viewModel.navigateToQiblaview();
 
                               case 5:
-                                viewModel.navigateToSurahView();
+                                // viewModel.navigateToSurahView();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => QuranOptionView(),
+                                  ),
+                                );
 
                               case 6:
                                 viewModel.navigateToZakat();

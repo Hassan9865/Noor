@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noor/app/app.locator.dart';
 import 'package:noor/app/app.router.dart';
+import 'package:quran_library/quran.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-void main() async {
+Future<void> main() async {
   await setupLocator();
+  await WidgetsFlutterBinding.ensureInitialized();
+  await QuranLibrary.init();
   runApp(const MyApp());
 }
 

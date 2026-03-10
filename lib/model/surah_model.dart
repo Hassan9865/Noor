@@ -26,3 +26,10 @@ class Surah {
     );
   }
 }
+
+class SurahModel {
+  final int number;
+  final String name;
+
+  SurahModel({required this.number, required this.name});
+}

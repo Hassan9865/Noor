@@ -5,8 +5,7 @@ class SurahItem extends StatelessWidget {
   final Surah surah;
   final VoidCallback onTap;
 
-  const SurahItem({Key? key, required this.surah, required this.onTap})
-    : super(key: key);
+  const SurahItem({super.key, required this.surah, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
